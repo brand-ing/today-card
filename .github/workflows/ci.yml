@@ -19,7 +19,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.10'  # Adjust based on your Python version
+          python-version: "3.10" # Adjust based on your Python version
 
       - name: Install Dependencies
         run: |
@@ -28,3 +28,6 @@ jobs:
 
       - name: Run Tests
         run: python -m unittest discover tests
+strategy:
+  matrix:
+    python-version: [3.10, 3.9, 3.8, 3.7, 3.6]
